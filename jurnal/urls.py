@@ -7,5 +7,6 @@ app_name = 'jurnal'
 urlpatterns = [
     path('', views.index, name='index'),
     path('tambah', views.tambah, name='tambah'),
-    path('simpan', views.simpan, name='simpan')
+    path('simpan', views.simpan, name='simpan'),
+    path('hapus/<int:id>', views.hapus, name='hapus')
 ]

@@ -36,3 +36,7 @@ def simpan(request):
 
     return redirect('jurnal:index')
     
+def hapus(request, id):
+    if request.method == 'POST':
+        Transaksi.objects.filter(id=id).delete()
+    return redirect('jurnal:index')
