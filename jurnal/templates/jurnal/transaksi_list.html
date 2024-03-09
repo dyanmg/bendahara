@@ -1,0 +1,27 @@
+{% extends 'jurnal/layout.html' %}
+
+{% block content %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Tanggal</th>
+            <th>Uraian</th>
+            <th>Debit</th>
+            <th>Kredit</th>
+            <th>Saldo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaksi in transaksi_list %}
+        <tr>
+            <td>{{ transaksi.tanggal }}</td>
+            <td>{{ transaksi.uraian }}</td>
+            <td>{{ transaksi.debit }}</td>
+            <td>{{ transaksi.kredit }}</td>
+            <td>{{ transaksi.saldo }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'jurnal:tambah' %}" class="btn btn-primary">Tambah</a>
+{% endblock content %}

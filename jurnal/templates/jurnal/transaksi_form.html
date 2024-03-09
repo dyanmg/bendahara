@@ -1,0 +1,27 @@
+{% extends 'jurnal/layout.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'jurnal:simpan' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="tanggal">Tanggal</label>
+        <input class="form-control" type="date" id="tanggal" name="tanggal" value="{{ now }}" required />
+    </div>
+    <div class="form-group">
+        <label for="uraian">Uraian</label>
+        <input class="form-control" type="text" id="uraian" name="uraian" required placeholder="Dibayar tagihan..." />
+    </div>
+    <div class="form-group">
+        <label for="debit">Debit</label>
+        <input class="form-control" type="number" id="debit" name="debit" required value="0" />
+    </div>
+    <div class="form-group">
+        <label for="kredit">Kredit</label>
+        <input class="form-control" type="number" id="kredit" name="kredit" required value="0" />
+    </div>
+    <div class="button-row">
+        <a href="{% url 'jurnal:index' %}" class="btn btn-secondary">Kembali</a>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </div>
+</form>
+{% endblock content %}

@@ -1,0 +1,9 @@
+main {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.button-row {
+    margin-top: 16px;
+    text-align: right;
+}
